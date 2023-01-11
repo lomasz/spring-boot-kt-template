@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: spring-boot-kt-template
+  name: spring-boot-kt-template
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-boot-kt-template
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: spring-boot-kt-template
+    spec:
+      containers:
+        - image: spring-boot-kt-template:latest
+          name: spring-boot-kt-template
+          ports:
+            - containerPort: 4326
+          resources: {}
+          imagePullPolicy: Never
+      restartPolicy: Always

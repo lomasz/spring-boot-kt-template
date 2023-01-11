@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: spring-boot-kt-template
+  name: spring-boot-kt-template
+spec:
+  ports:
+    - name: "4326"
+      port: 4326
+      targetPort: 4326
+  selector:
+    app: spring-boot-kt-template
+status:
+  loadBalancer: {}
+
